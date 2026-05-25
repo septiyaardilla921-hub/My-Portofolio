@@ -103,6 +103,10 @@ if (contactForm && submitBtn) {
 // Template.js — clean, no duplicates
 // =============================================
 
+// =============================================
+// Template.js — clean, no duplicates
+// =============================================
+
 // ── Mobile Menu Toggle ────────────────────────────
 const menuBtn = document.querySelector('.menu-btn');
 const nav     = document.querySelector('nav');
@@ -112,10 +116,12 @@ if (menuBtn && nav) {
         nav.classList.toggle('open');
 
         const icon = menuBtn.querySelector('i');
-        if (nav.classList.contains('open')) {
-            icon.classList.replace('fa-bars', 'fa-xmark');
-        } else {
-            icon.classList.replace('fa-xmark', 'fa-bars');
+        if (icon) {
+            if (nav.classList.contains('open')) {
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
         }
     });
 
@@ -124,7 +130,7 @@ if (menuBtn && nav) {
         link.addEventListener('click', () => {
             nav.classList.remove('open');
             const icon = menuBtn.querySelector('i');
-            icon.classList.replace('fa-xmark', 'fa-bars');
+            if (icon) icon.classList.replace('fa-xmark', 'fa-bars');
         });
     });
 }
@@ -146,11 +152,11 @@ if (contactForm && submitBtn) {
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        const nama   = (contactForm.querySelector('[name="nama"]').value   || '').trim();
-        const email  = (contactForm.querySelector('[name="email"]').value  || '').trim();
-        const wa     = (contactForm.querySelector('[name="kontak"]').value || '').trim();
-        const subjek = (contactForm.querySelector('[name="subjek"]').value || '').trim();
-        const pesan  = (contactForm.querySelector('[name="pesan"]').value  || '').trim();
+        const nama   = (contactForm.querySelector('[name="nama"]')?.value   || '').trim();
+        const email  = (contactForm.querySelector('[name="email"]')?.value  || '').trim();
+        const wa     = (contactForm.querySelector('[name="kontak"]')?.value || '').trim();
+        const subjek = (contactForm.querySelector('[name="subjek"]')?.value || '').trim();
+        const pesan  = (contactForm.querySelector('[name="pesan"]')?.value  || '').trim();
 
         if (!nama || !pesan || (!email && !wa)) {
             alert('Harap isi Nama, Pesan, dan minimal Email atau No. WhatsApp.');

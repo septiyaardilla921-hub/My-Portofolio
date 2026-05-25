@@ -99,3 +99,28 @@ if (contactForm && submitBtn) {
     });
 
 }
+// ===== MOBILE MENU TOGGLE =====
+const menuBtn = document.querySelector('.menu-btn');
+const nav     = document.querySelector('nav');
+
+if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+        nav.classList.toggle('open');
+
+        // Ganti ikon hamburger ↔ close
+        const icon = menuBtn.querySelector('i');
+        if (nav.classList.contains('open')) {
+            icon.classList.replace('fa-bars', 'fa-xmark');
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+    });
+
+    // Tutup menu saat salah satu link diklik
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+            menuBtn.querySelector('i').classList.replace('fa-xmark', 'fa-bars');
+        });
+    });
+}

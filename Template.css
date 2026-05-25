@@ -787,69 +787,97 @@ footer {
     flex-shrink: 0;
 }
 
-/* =============================================
-   RESPONSIVE — SATU blok, tidak duplikat
-============================================= */
+/* ── DRAWER OVERLAY ── */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+}
+.nav-overlay.show { display: block; }
+
 @media (max-width: 900px) {
-    nav {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
         background: white;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-        padding: 10px 0;
-        z-index: 999;
+        border: 1.5px solid #e2e8f0;
+        cursor: pointer;
+        z-index: 1001;
+        font-size: 20px;
+        color: var(--blue-dark);
     }
 
-    nav.open {
-        display: flex;
+    /* Drawer dari kanan */
+    nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%;
+        max-width: 280px;
+        height: 100%;
+        background: white;
+        z-index: 999;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        box-shadow: -8px 0 30px rgba(0, 0, 0, 0.12);
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex; /* selalu flex, buka/tutup pakai transform */
+    }
+
+    nav.open { transform: translateX(0); }
+
+    /* Header dalam drawer */
+    nav::before {
+        content: 'Menu';
+        display: block;
+        padding: 20px 20px 14px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--blue-main);
+        border-bottom: 1px solid #f1f5f9;
     }
 
     nav a {
-        padding: 14px 8%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 20px;
         font-size: 15px;
-        border-bottom: 1px solid #f1f5f9;
+        font-weight: 500;
+        color: var(--text-dark);
+        border-bottom: 1px solid #f8fafc;
         width: 100%;
     }
+    nav a:last-child { border-bottom: none; }
+    nav a:hover      { background: var(--blue-pale); color: var(--blue-main); }
+    nav a.active     { background: var(--blue-pale); color: var(--blue-main); }
 
-    nav a:last-child  { border-bottom: none; }
-
-    nav a.active {
-        color: var(--blue-main);
-        background: var(--blue-pale);
-        border-bottom: 1px solid #f1f5f9;
-    }
-
-    .menu-btn {
-        display: block;
-        font-size: 22px;
-        color: var(--text-dark);
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    .hero         { flex-direction: column-reverse; text-align: center; }
+    /* Hero */
+    .hero         { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
     .hero-buttons { justify-content: center; }
-    .hero-text h1 { font-size: 42px; }
-    .hero-image   { width: 100%; height: 400px; }
+    .hero-text h1 { font-size: 38px; }
+    .hero-image   { width: 100%; height: 380px; }
     .circle-bg    { width: 300px; height: 300px; }
-    .profile-wrapper { width: 270px; height: 270px; }
+    .profile-wrapper { width: 260px; height: 260px; }
 
     h2 { font-size: 32px; }
 }
 
 @media (max-width: 480px) {
-    h1                           { font-size: 32px; }
+    h1                           { font-size: 30px; }
     .hero-buttons                { flex-direction: column; align-items: center; }
-    .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
-    .hero-image                  { height: 320px; }
-    .circle-bg                   { width: 260px; height: 260px; }
-    .profile-wrapper             { width: 230px; height: 230px; }
-    .cm-row                      { grid-template-columns: 1fr; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .hero-image                  { height: 300px; }
+    .circle-bg                   { width: 250px; height: 250px; }
+    .profile-wrapper             { width: 220px; height: 220px; }
 }
 
 /* =============================================

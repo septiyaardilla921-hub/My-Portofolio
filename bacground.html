@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Details — Septiya Ardilla</title>
+
+    <!-- ✅ Fix: hapus link ke about.html (bug kritis), pakai CSS yang benar -->
+    <link rel="stylesheet" href="Template.css">
+    <link rel="stylesheet" href="bacground.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========================
+         NAVBAR
+    ========================= -->
+    <header>
+        <div class="logo">Network <span>Monitoring & Provisioning</span></div>
+        <nav>
+            <a href="Template.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="skill.html">Skills</a>
+            <a href="project.html">Projects</a>
+            <a href="Template.html#contact">Contact</a>
+        </nav>
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- ========================
+         TAB NAVIGATION
+         ✅ Fix: semua section tampil sekaligus → pakai tab switcher
+    ========================= -->
+    <main class="detail-main">
+
+        <div class="tab-nav">
+            <button class="tab-btn active" data-target="education">
+                <i class="fa-solid fa-graduation-cap"></i>
+                Education
+            </button>
+            <button class="tab-btn" data-target="work">
+                <i class="fa-solid fa-briefcase"></i>
+                Work
+            </button>
+            <button class="tab-btn" data-target="organization">
+                <i class="fa-solid fa-users"></i>
+                Organization
+            </button>
+        </div>
+
+        <!-- EDUCATION -->
+        <section class="detail-page active" id="education">
+            <div class="detail-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h1>Education Background</h1>
+                <p class="detail-desc">
+                    Bachelor of Telecommunication Engineering with specialization
+                    in Network Engineering, Monitoring and Database
+                </p>    
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2020 – 2024</span>
+                        <h3>Institute Technology of Sumatera</h3>
+                        <p>Telecommunication Engineering</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2017 – 2020</span>
+                        <h3>Senior High School</h3>
+                        <p>Natural Science</p>
+                    </div>
+                </div>
+                <a href="about.html" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back menu 
+                </a>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section class="detail-page" id="work">
+            <div class="detail-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <h1>Work Experience</h1>
+                <p class="detail-desc">
+                    Provesional Network Engineering, Monitoring and Processing Data 
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2025 – Present</span>
+                        <h3>Network Monitoring</h3>
+                        <p>Monitoring infrastructure, looking for network problems, setting configuration the device and troubleshooting.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2024 – 2025</span>
+                        <h3>Staff Administration</h3>
+                        <p>Handled document project, manage data payment, and manage all administrative division needs</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2024</span>
+                        <h3>Internship as Solution Engineer</h3>
+                        <p>Analyzing the structure of BTS towers</p>
+                    </div>
+                </div>
+                <a href="about.html" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back education
+                </a>
+            </div>
+        </section>
+
+        <!-- ORGANIZATION EXPERIENCE -->
+        <section class="detail-page" id="organization">
+            <div class="detail-card">
+                <div class="icon-box">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h1>Organization Experience</h1>
+                <p class="detail-desc">
+                    Leadership, teamwork, and community contribution
+                    through organization and collaborative activities.
+                </p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-year">2023 – 2024</span>
+                        <h3>Technology Community Leader</h3>
+                        <p>Managed networking workshops and technical events.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-year">2022 – 2023</span>
+                        <h3>Student Organization Member</h3>
+                        <p>Participated in leadership and collaboration activities.</p>
+                    </div>
+                </div>
+                <a href="about.html" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Back to work
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="detail.js"></script>
+    <script src="bacground.js"></script>
+</body>
+</html>
+
+ <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Septiya Ardilla — Telecommunication Engineer Portfolio</p>
+    </footer>
